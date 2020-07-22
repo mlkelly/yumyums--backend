@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# dont' froget to destroy_all
+# start with the ones that belogns_to and only afterwards add has_many to avoid multiplications in database
+ 
+# "ClassName.reset_pk_sequence" allows you to start fresh ids whenever you run rails db:seed
+
