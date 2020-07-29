@@ -5,4 +5,7 @@ class User < ApplicationRecord
     validates :username, presence: true
     validates :username, uniqueness: true 
     validates :username, format: { without: /\s/ } #validates no spaces
+
+    has_secure_password
+
 end

@@ -1,6 +1,7 @@
 # if have estra time srape recipes from api
 
-classes = [Ingredient, User, Recipe, Review, RecIngred]
+# classes = [Ingredient, User, Recipe, Review, RecIngred]
+classes = [RecIngred, Ingredient, Review, Recipe, User]
 classes.each{|c|
     c.destroy_all 
     c.reset_pk_sequence #resets PKs when run rails db:seed
@@ -12,7 +13,7 @@ i3 = Ingredient.create(name: "Cheddar Cheese")
 i4 = Ingredient.create(name: "Truffle Mushrooms")
 i5 = Ingredient.create(name: "Onion")
 
-u1 = User.create(username: "mlk1000", bio:"Food artist", img: "https://www.sackettwaconia.com/wp-content/uploads/default-profile.png")
+u1 = User.create(username: "mlk1000", bio:"Food artist", password:"password")
 
 recipe1 = Recipe.create(title:"Truffle Grilled Cheese", abt: "Quick and Easy Twist on the Classic Grilled Cheese", user_id: u1.id)
 
