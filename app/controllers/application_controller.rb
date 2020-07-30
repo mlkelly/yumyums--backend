@@ -43,6 +43,7 @@ class ApplicationController < ActionController::API
 
     # -------------------VIDHI CODE----------------
     def logged_in?
+        # byebug
         headers = request.headers["Authorization"]
         token = headers.split(" ")[1]
 
@@ -54,7 +55,7 @@ class ApplicationController < ActionController::API
         # ensure
         #     always runs with an error or without
         end
-        render json: {error: "Please Log In"} unless user
+        render json: {error: "Please Log In"} unless user # renders error unless user true
     end
 
 end

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :ingredients
 
       post "/login", to: "auth#create"
+      post "/signup", to: "users#create"
       # get '/profile', to: 'users#profile'
     end
   end
