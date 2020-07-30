@@ -22,6 +22,13 @@ class Api::V1::RecipesController < ApplicationController
         # render json: recipe
     end
 
+    def update
+        # byebug
+        recipe = Recipe.find(params[:id])
+        recipe.update(recipe_params)
+        render json: recipe
+    end
+
     def destroy
         # byebug
         recipe = Recipe.find(params[:id])
@@ -36,6 +43,7 @@ class Api::V1::RecipesController < ApplicationController
     end
 
     def recipe_params
-        params.require(:recipe).permit(:title, :abt, :img, :user_id)
+        # params.require(:recipe).permit(:title, :abt, :img, :user_id)
+        params.permit(:id, :recipe, :title, :abt, :img, :user_id)
     end
 end
