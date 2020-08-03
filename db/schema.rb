@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_29_114130) do
+ActiveRecord::Schema.define(version: 2020_07_30_155455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_07_29_114130) do
   create_table "recipes", force: :cascade do |t|
     t.string "title"
     t.string "abt"
-    t.string "img"
+    t.string "img", default: "https://ak.picdn.net/shutterstock/videos/8470912/thumb/11.jpg"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

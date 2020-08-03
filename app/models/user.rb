@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_many :reviews
     has_many :recipes
+    has_many :rec_ingreds, through: :recipes
 
     validates :username, presence: true
     validates :username, uniqueness: true 
